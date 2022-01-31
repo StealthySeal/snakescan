@@ -1,15 +1,6 @@
 import sys
 import psutil
 
-# |System Info (OS etc)|
-
-# get the current operating system being used to run snakescan
-def get_os_info():
-    if psutil.WINDOWS: return "Windows"
-    elif psutil.LINUX: return "Linux"
-    elif psutil.MACOS: return "MacOS"
-    return "Unknown OS"
-
 # |CPU|
 
 # get basic CPU information
