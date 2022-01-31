@@ -1,2 +1,3 @@
 # snakescan
-python hardware monitor
+Python hardware monitor
+<hr>
