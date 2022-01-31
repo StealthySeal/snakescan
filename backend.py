@@ -1,6 +1,15 @@
 import sys
 import psutil
 
+# |System info (OS, runtime etc)|
+
+# get current running operating system
+def get_os_info():
+    if psutil.LINUX: return "Linux"
+    elif psutil.WINDOWS: return "Windows"
+    elif psutil.MACOS: return "MacOSX"
+    else: return "Unidentified OS"
+
 # |CPU|
 
 # get basic CPU information
