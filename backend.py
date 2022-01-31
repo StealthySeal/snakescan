@@ -55,7 +55,3 @@ def get_swap_memory_stats():
 def memory_info():
     print(get_memory_stats())
     print(get_swap_memory_stats())
-
-cpu_info()
-print()
-memory_info()
