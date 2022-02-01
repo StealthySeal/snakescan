@@ -10,6 +10,13 @@ def get_os_info():
     elif psutil.MACOS: return "MacOSX"
     else: return "Unidentified OS"
 
+# get general system info (boot time, network, users etc)
+def get_system_info():
+    current_user = psutil.users()[0]
+    boot_time = psutil.boot_time()
+    values = [current_user, boot_time]
+    return values
+
 # |CPU|
 
 # get basic CPU information
@@ -64,3 +71,25 @@ def get_swap_memory_stats():
 def memory_info():
     print(get_memory_stats())
     print(get_swap_memory_stats())
+
+# |Disks|
+
+# Collect disk information
+def get_disk_info():
+    disk_partitions = psutil.disk_partitions(all=False)
+    return disk_partitions
+
+# |Hardware Health Information|
+def get_hardware_temps():
+    temps = psutil.sensors_temperatures()
+    return temps
+
+def get_fan_speed():
+    speeds = psutil.sensors_fans()
+    return speeds
+    
+def get_battery_status():
+    battery_percent = psutil.sensors_battery().percent
+    battery_time_remaining = psutil.sensors_battery().secsleft
+    values = [battery_percent, battery_time_remaining]
+    return values
